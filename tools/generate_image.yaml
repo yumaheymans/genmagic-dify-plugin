@@ -1,0 +1,129 @@
+identity:
+  name: generate_image
+  author: genmagic
+  label:
+    en_US: Generate image
+    zh_Hans: 生成图像
+    ja_JP: 画像を生成
+    pt_BR: Gerar imagem
+description:
+  human:
+    en_US: Create an image from a text description with any image model GenMagic serves (the list updates as labs release new models), optionally transforming a reference image or making a logo.
+    zh_Hans: 使用 GenMagic 提供的任一图像模型根据文字描述生成图像（模型列表随各实验室发布新模型实时更新），可选基于参考图变换或生成标志。
+    ja_JP: GenMagic が提供する任意の画像モデル（各ラボの新モデルに合わせて一覧が更新されます）でテキストから画像を生成します。参考画像の変換やロゴ作成も可能です。
+    pt_BR: Crie uma imagem a partir de uma descrição com qualquer modelo de imagem do GenMagic (a lista acompanha os lançamentos), opcionalmente transformando uma imagem de referência ou criando um logotipo.
+  llm: Generate an image from a text description and return it as an image file plus its hosted URL. Optionally pass a reference image to transform it (image-to-image), or set type to logo for a brand mark.
+parameters:
+  - name: prompt
+    type: string
+    required: true
+    label:
+      en_US: Prompt
+      zh_Hans: 提示词
+      ja_JP: プロンプト
+      pt_BR: Prompt
+    human_description:
+      en_US: A description of the image to create, or of the change to make when a reference image is given.
+      zh_Hans: 要生成的图像描述；提供参考图时，描述要做的修改。
+      ja_JP: 作成する画像の説明。参考画像がある場合は加える変更の説明。
+      pt_BR: Descrição da imagem a criar, ou da alteração a fazer quando houver uma imagem de referência.
+    llm_description: A detailed description of the image to create (subject, style, composition, lighting), or of the edit to apply when a reference image is given.
+    form: llm
+  - name: model
+    type: dynamic-select
+    required: false
+    default: auto
+    label:
+      en_US: Model
+      zh_Hans: 模型
+      ja_JP: モデル
+      pt_BR: Modelo
+    human_description:
+      en_US: The image model to use, listed live from GenMagic with its price. Auto lets GenMagic pick.
+      zh_Hans: 要使用的图像模型，实时从 GenMagic 获取并显示价格。选择“自动”由 GenMagic 挑选。
+      ja_JP: 使用する画像モデル（GenMagic から価格付きで取得）。「自動」を選ぶと GenMagic が選択します。
+      pt_BR: O modelo de imagem, listado ao vivo pelo GenMagic com o preço. Automático deixa o GenMagic escolher.
+    llm_description: A GenMagic image model id from the list, or "auto" to let GenMagic choose. Use "auto" unless the user asked for a specific model.
+    # Declared as an llm input: Dify's workflow panel only loads dynamic options for input
+    # variables, so a form-only dynamic select would render empty.
+    form: llm
+  - name: size
+    type: select
+    required: false
+    default: 1024x1024
+    label:
+      en_US: Size
+      zh_Hans: 尺寸
+      ja_JP: サイズ
+      pt_BR: Tamanho
+    human_description:
+      en_US: Square, wide or tall.
+      zh_Hans: 方形、横版或竖版。
+      ja_JP: 正方形、横長、縦長。
+      pt_BR: Quadrado, largo ou alto.
+    form: form
+    options:
+      - value: 1024x1024
+        label:
+          en_US: Square (1024x1024)
+          zh_Hans: 方形 (1024x1024)
+          ja_JP: 正方形 (1024x1024)
+          pt_BR: Quadrado (1024x1024)
+      - value: 1792x1024
+        label:
+          en_US: Wide (1792x1024)
+          zh_Hans: 横版 (1792x1024)
+          ja_JP: 横長 (1792x1024)
+          pt_BR: Largo (1792x1024)
+      - value: 1024x1792
+        label:
+          en_US: Tall (1024x1792)
+          zh_Hans: 竖版 (1024x1792)
+          ja_JP: 縦長 (1024x1792)
+          pt_BR: Alto (1024x1792)
+  - name: type
+    type: select
+    required: false
+    default: image
+    label:
+      en_US: Kind
+      zh_Hans: 类型
+      ja_JP: 種類
+      pt_BR: Tipo
+    human_description:
+      en_US: A picture, or a logo (a brand mark).
+      zh_Hans: 普通图片，或标志（品牌标识）。
+      ja_JP: 画像、またはロゴ（ブランドマーク）。
+      pt_BR: Uma imagem, ou um logotipo (marca).
+    form: form
+    options:
+      - value: image
+        label:
+          en_US: Image
+          zh_Hans: 图片
+          ja_JP: 画像
+          pt_BR: Imagem
+      - value: logo
+        label:
+          en_US: Logo
+          zh_Hans: 标志
+          ja_JP: ロゴ
+          pt_BR: Logotipo
+  - name: reference_image
+    type: file
+    required: false
+    label:
+      en_US: Reference image
+      zh_Hans: 参考图
+      ja_JP: 参考画像
+      pt_BR: Imagem de referência
+    human_description:
+      en_US: Optional image to transform instead of generating from scratch (PNG, JPEG or WebP, up to 10 MB).
+      zh_Hans: 可选，基于此图进行变换而非从零生成（PNG、JPEG 或 WebP，最大 10 MB）。
+      ja_JP: 任意。ゼロから生成する代わりに変換する画像（PNG、JPEG、WebP、最大 10 MB）。
+      pt_BR: Imagem opcional a transformar em vez de gerar do zero (PNG, JPEG ou WebP, até 10 MB).
+    llm_description: Optional image file to transform (image-to-image), for example a product or character to keep consistent.
+    form: llm
+extra:
+  python:
+    source: tools/generate_image.py

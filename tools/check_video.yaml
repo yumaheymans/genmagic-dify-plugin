@@ -1,0 +1,34 @@
+identity:
+  name: check_video
+  author: genmagic
+  label:
+    en_US: Check video
+    zh_Hans: 查询视频
+    ja_JP: 動画を確認
+    pt_BR: Verificar vídeo
+description:
+  human:
+    en_US: Check a video started with Generate video and get the clip once it is ready.
+    zh_Hans: 查询由“生成视频”启动的任务，完成后获取视频。
+    ja_JP: 「動画を生成」で開始した動画の状態を確認し、完成したら取得します。
+    pt_BR: Verifique um vídeo iniciado com Gerar vídeo e obtenha o clipe quando estiver pronto.
+  llm: Check a GenMagic video job by its id. Returns the video file and hosted URL when completed, or the current status (queued or processing) to check again in a few seconds.
+parameters:
+  - name: id
+    type: string
+    required: true
+    label:
+      en_US: Video job id
+      zh_Hans: 视频任务 ID
+      ja_JP: 動画ジョブ ID
+      pt_BR: ID do vídeo
+    human_description:
+      en_US: The id returned by Generate video.
+      zh_Hans: “生成视频”返回的 ID。
+      ja_JP: 「動画を生成」が返した ID。
+      pt_BR: O ID retornado por Gerar vídeo.
+    llm_description: The video job id returned by the generate_video tool.
+    form: llm
+extra:
+  python:
+    source: tools/check_video.py

@@ -1,0 +1,40 @@
+version: 0.0.1
+type: plugin
+author: genmagic
+name: genmagic
+label:
+  en_US: GenMagic
+  zh_Hans: GenMagic
+  ja_JP: GenMagic
+  pt_BR: GenMagic
+description:
+  en_US: Generate images, video, music, speech and text with 500+ AI models from every major lab, using one GenMagic API key and one pay-as-you-go balance.
+  zh_Hans: 使用一个 GenMagic API 密钥和一个按量付费余额，调用各大实验室的 500 多个 AI 模型生成图像、视频、音乐、语音和文本。
+  ja_JP: GenMagic の API キーひとつと従量課金の残高ひとつで、主要ラボの 500 以上の AI モデルを使って画像、動画、音楽、音声、テキストを生成します。
+  pt_BR: Gere imagens, vídeo, música, voz e texto com mais de 500 modelos de IA dos principais laboratórios, usando uma chave de API GenMagic e um saldo pré-pago.
+icon: icon.svg
+repo: https://github.com/yumaheymans/genmagic-dify-plugin
+contact: hello@genmagic.co
+resource:
+  memory: 268435456
+  permission: {}
+plugins:
+  tools:
+    - provider/genmagic.yaml
+network:
+  domains:
+    - genmagic.co
+    - tlwdqzfibvgektzgdfqa.supabase.co
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+  minimum_dify_version: 1.5.1
+created_at: 2026-09-29T13:06:09.384639+02:00
+privacy: PRIVACY.md
+verified: false

@@ -1,0 +1,50 @@
+identity:
+  name: generate_music
+  author: genmagic
+  label:
+    en_US: Generate music
+    zh_Hans: 生成音乐
+    ja_JP: 音楽を生成
+    pt_BR: Gerar música
+description:
+  human:
+    en_US: Create an original music track from a description of the genre, mood, instruments and tempo.
+    zh_Hans: 根据曲风、情绪、乐器和节奏的描述生成原创音乐。
+    ja_JP: ジャンル、雰囲気、楽器、テンポの説明からオリジナル曲を生成します。
+    pt_BR: Crie uma faixa musical original a partir de uma descrição do gênero, clima, instrumentos e ritmo.
+  llm: Generate an original music track from a text description (genre, mood, instruments, tempo). Returns the audio file and its hosted URL.
+parameters:
+  - name: prompt
+    type: string
+    required: true
+    label:
+      en_US: Prompt
+      zh_Hans: 提示词
+      ja_JP: プロンプト
+      pt_BR: Prompt
+    human_description:
+      en_US: A description of the music to create.
+      zh_Hans: 要生成的音乐描述。
+      ja_JP: 作成する音楽の説明。
+      pt_BR: Descrição da música a criar.
+    llm_description: A description of the music (genre, mood, instruments, tempo, length feel).
+    form: llm
+  - name: model
+    type: dynamic-select
+    required: false
+    default: auto
+    label:
+      en_US: Model
+      zh_Hans: 模型
+      ja_JP: モデル
+      pt_BR: Modelo
+    human_description:
+      en_US: The music model to use, listed live from GenMagic. Auto lets GenMagic pick.
+      zh_Hans: 要使用的音乐模型，实时从 GenMagic 获取。选择“自动”由 GenMagic 挑选。
+      ja_JP: 使用する音楽モデル（GenMagic から取得）。「自動」を選ぶと GenMagic が選択します。
+      pt_BR: O modelo de música, listado ao vivo pelo GenMagic. Automático deixa o GenMagic escolher.
+    llm_description: A GenMagic music model id from the list, or "auto" to let GenMagic choose.
+    form: llm
+extra:
+  python:
+    source: tools/generate_music.py

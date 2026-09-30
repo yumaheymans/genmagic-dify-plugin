@@ -1,0 +1,49 @@
+identity:
+  author: genmagic
+  name: genmagic
+  label:
+    en_US: GenMagic
+    zh_Hans: GenMagic
+    ja_JP: GenMagic
+    pt_BR: GenMagic
+  description:
+    en_US: Generate images, video, music, speech and text with 500+ AI models from every major lab, using one GenMagic API key and one pay-as-you-go balance.
+    zh_Hans: 使用一个 GenMagic API 密钥和一个按量付费余额，调用各大实验室的 500 多个 AI 模型生成图像、视频、音乐、语音和文本。
+    ja_JP: GenMagic の API キーひとつと従量課金の残高ひとつで、主要ラボの 500 以上の AI モデルを使って画像、動画、音楽、音声、テキストを生成します。
+    pt_BR: Gere imagens, vídeo, música, voz e texto com mais de 500 modelos de IA dos principais laboratórios, usando uma chave de API GenMagic e um saldo pré-pago.
+  icon: icon.svg
+  tags:
+    - image
+    - videos
+    - design
+    - entertainment
+credentials_for_provider:
+  genmagic_api_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: GenMagic API key
+      zh_Hans: GenMagic API 密钥
+      ja_JP: GenMagic API キー
+      pt_BR: Chave de API GenMagic
+    placeholder:
+      en_US: Paste your GenMagic API key
+      zh_Hans: 粘贴你的 GenMagic API 密钥
+      ja_JP: GenMagic の API キーを貼り付けてください
+      pt_BR: Cole sua chave de API GenMagic
+    help:
+      en_US: Create a free GenMagic account, verify your email, then create an API key in Settings.
+      zh_Hans: 注册免费的 GenMagic 账户并验证邮箱，然后在设置中创建 API 密钥。
+      ja_JP: 無料の GenMagic アカウントを作成してメールを確認し、設定で API キーを作成してください。
+      pt_BR: Crie uma conta gratuita no GenMagic, verifique seu e-mail e crie uma chave de API em Configurações.
+    url: https://genmagic.co/developers?utm_source=dify-marketplace&utm_medium=integration&utm_campaign=agent-platforms
+tools:
+  - tools/generate_image.yaml
+  - tools/generate_video.yaml
+  - tools/check_video.yaml
+  - tools/generate_music.yaml
+  - tools/generate_speech.yaml
+  - tools/generate_text.yaml
+extra:
+  python:
+    source: provider/genmagic.py

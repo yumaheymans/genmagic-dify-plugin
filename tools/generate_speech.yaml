@@ -1,0 +1,65 @@
+identity:
+  name: generate_speech
+  author: genmagic
+  label:
+    en_US: Generate speech
+    zh_Hans: 生成语音
+    ja_JP: 音声を生成
+    pt_BR: Gerar voz
+description:
+  human:
+    en_US: Turn text into natural spoken audio. The text is read aloud word for word.
+    zh_Hans: 将文本转换为自然的语音，逐字朗读。
+    ja_JP: テキストを自然な音声に変換します。テキストはそのまま読み上げられます。
+    pt_BR: Transforme texto em áudio falado natural. O texto é lido palavra por palavra.
+  llm: Convert text to speech (text to speech). The input text is voiced verbatim. Returns the audio file and its hosted URL.
+parameters:
+  - name: input
+    type: string
+    required: true
+    label:
+      en_US: Text
+      zh_Hans: 文本
+      ja_JP: テキスト
+      pt_BR: Texto
+    human_description:
+      en_US: The text to speak.
+      zh_Hans: 要朗读的文本。
+      ja_JP: 読み上げるテキスト。
+      pt_BR: O texto a ser falado.
+    llm_description: The exact text to read aloud.
+    form: llm
+  - name: voice
+    type: string
+    required: false
+    label:
+      en_US: Voice
+      zh_Hans: 声音
+      ja_JP: 声
+      pt_BR: Voz
+    human_description:
+      en_US: Optional voice name, for example alloy. Leave empty for a neutral default voice.
+      zh_Hans: 可选，声音名称，例如 alloy。留空使用中性默认声音。
+      ja_JP: "任意。声の名前（例: alloy）。空欄なら中立的な既定の声。"
+      pt_BR: Nome de voz opcional, por exemplo alloy. Deixe vazio para uma voz neutra padrão.
+    llm_description: Optional voice name such as alloy. Omit to use the default voice.
+    form: form
+  - name: model
+    type: dynamic-select
+    required: false
+    default: auto
+    label:
+      en_US: Model
+      zh_Hans: 模型
+      ja_JP: モデル
+      pt_BR: Modelo
+    human_description:
+      en_US: The speech model to use, listed live from GenMagic with its price. Auto lets GenMagic pick.
+      zh_Hans: 要使用的语音模型，实时从 GenMagic 获取并显示价格。选择“自动”由 GenMagic 挑选。
+      ja_JP: 使用する音声モデル（GenMagic から価格付きで取得）。「自動」を選ぶと GenMagic が選択します。
+      pt_BR: O modelo de voz, listado ao vivo pelo GenMagic com o preço. Automático deixa o GenMagic escolher.
+    llm_description: A GenMagic speech model id from the list, or "auto" to let GenMagic choose.
+    form: llm
+extra:
+  python:
+    source: tools/generate_speech.py

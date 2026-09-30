@@ -1,0 +1,112 @@
+identity:
+  name: generate_text
+  author: genmagic
+  label:
+    en_US: Generate text
+    zh_Hans: 生成文本
+    ja_JP: テキストを生成
+    pt_BR: Gerar texto
+description:
+  human:
+    en_US: Write copy, answers or code, or make an SVG graphic or a complete web page, with any text model GenMagic serves.
+    zh_Hans: 使用 GenMagic 提供的任一文本模型撰写文案、回答或代码，或生成 SVG 图形、完整网页。
+    ja_JP: GenMagic が提供する任意のテキストモデルで、文章、回答、コードを書いたり、SVG 画像や完全な Web ページを作成したりします。
+    pt_BR: Escreva textos, respostas ou código, ou crie um gráfico SVG ou uma página web completa, com qualquer modelo de texto do GenMagic.
+  llm: Generate text with a chosen model. Set type to "website" for a complete self-contained HTML page, "svg" for a vector graphic, "code" for code, "writing" for prose; omit it for plain text. SVG and web pages are also returned as files.
+parameters:
+  - name: prompt
+    type: string
+    required: true
+    label:
+      en_US: Prompt
+      zh_Hans: 提示词
+      ja_JP: プロンプト
+      pt_BR: Prompt
+    human_description:
+      en_US: What to write or produce.
+      zh_Hans: 要撰写或生成的内容。
+      ja_JP: 書く内容、作るもの。
+      pt_BR: O que escrever ou produzir.
+    llm_description: What to write or produce, with any details that matter (audience, length, format).
+    form: llm
+  - name: type
+    type: select
+    required: false
+    default: text
+    label:
+      en_US: Output
+      zh_Hans: 输出类型
+      ja_JP: 出力
+      pt_BR: Saída
+    human_description:
+      en_US: Plain text, prose, code, an SVG graphic or a complete web page.
+      zh_Hans: 纯文本、文章、代码、SVG 图形或完整网页。
+      ja_JP: プレーンテキスト、文章、コード、SVG 画像、または完全な Web ページ。
+      pt_BR: Texto simples, prosa, código, um gráfico SVG ou uma página web completa.
+    llm_description: One of text, writing, code, svg, website.
+    form: llm
+    options:
+      - value: text
+        label:
+          en_US: Plain text
+          zh_Hans: 纯文本
+          ja_JP: プレーンテキスト
+          pt_BR: Texto simples
+      - value: writing
+        label:
+          en_US: Writing
+          zh_Hans: 文章
+          ja_JP: 文章
+          pt_BR: Redação
+      - value: code
+        label:
+          en_US: Code
+          zh_Hans: 代码
+          ja_JP: コード
+          pt_BR: Código
+      - value: svg
+        label:
+          en_US: SVG graphic
+          zh_Hans: SVG 图形
+          ja_JP: SVG 画像
+          pt_BR: Gráfico SVG
+      - value: website
+        label:
+          en_US: Web page (HTML)
+          zh_Hans: 网页 (HTML)
+          ja_JP: Web ページ (HTML)
+          pt_BR: Página web (HTML)
+  - name: system
+    type: string
+    required: false
+    label:
+      en_US: System instruction
+      zh_Hans: 系统指令
+      ja_JP: システム指示
+      pt_BR: Instrução de sistema
+    human_description:
+      en_US: Optional instruction to steer tone, role or format.
+      zh_Hans: 可选，用于控制语气、角色或格式的指令。
+      ja_JP: 任意。口調、役割、形式を調整する指示。
+      pt_BR: Instrução opcional para ajustar tom, papel ou formato.
+    llm_description: Optional system instruction to steer tone, role or format.
+    form: llm
+  - name: model
+    type: dynamic-select
+    required: false
+    default: auto
+    label:
+      en_US: Model
+      zh_Hans: 模型
+      ja_JP: モデル
+      pt_BR: Modelo
+    human_description:
+      en_US: The text model to use, listed live from GenMagic with its price. Auto picks the right model for each prompt.
+      zh_Hans: 要使用的文本模型，实时从 GenMagic 获取并显示价格。选择“自动”会为每个提示词挑选合适的模型。
+      ja_JP: 使用するテキストモデル（GenMagic から価格付きで取得）。「自動」はプロンプトごとに適切なモデルを選びます。
+      pt_BR: O modelo de texto, listado ao vivo pelo GenMagic com o preço. Automático escolhe o modelo certo para cada prompt.
+    llm_description: A GenMagic text model id from the list, or "auto" to let GenMagic choose per prompt.
+    form: llm
+extra:
+  python:
+    source: tools/generate_text.py
