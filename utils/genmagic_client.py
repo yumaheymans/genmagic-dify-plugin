@@ -19,13 +19,13 @@ from urllib.parse import urlparse
 
 import requests
 
-PLUGIN_VERSION = "0.0.1"
+PLUGIN_VERSION = "0.0.2"
 BASE_URL = "https://genmagic.co"
 CLIENT_HEADER = f"dify-plugin/{PLUGIN_VERSION}"
 USER_AGENT = f"genmagic-dify-plugin/{PLUGIN_VERSION}"
 
 UTM = "utm_source=dify-marketplace&utm_medium=integration&utm_campaign=agent-platforms"
-KEY_HINT = f"Create a free GenMagic account and an API key at {BASE_URL}/developers?{UTM}"
+KEY_HINT = f"Create a free GenMagic account and an API key at {BASE_URL}/get-api-key?{UTM}"
 
 # Hosts GenMagic serves generated media from (declared in manifest.yaml network.domains).
 MEDIA_HOSTS = ("genmagic.co", "tlwdqzfibvgektzgdfqa.supabase.co")

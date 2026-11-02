@@ -5,7 +5,7 @@
 **Type:** tool
 **Source:** https://github.com/yumaheymans/genmagic-dify-plugin
 
-Generate images, video, music, speech and text in your Dify workflows and agents with 500+ AI models from the major labs (OpenAI, Google, Anthropic, Black Forest Labs, ByteDance, Alibaba, xAI and many more), all through one [GenMagic](https://genmagic.co/?utm_source=dify-marketplace&utm_medium=integration&utm_campaign=agent-platforms) API key and one pay-as-you-go balance. Each tool's model list is loaded live from GenMagic, so newly released models appear without a plugin update.
+Generate images, video, music, speech and text in your Dify workflows and agents with 450+ AI models from the major labs (OpenAI, Google, Anthropic, Black Forest Labs, ByteDance, Alibaba, xAI and many more), all through one [GenMagic](https://genmagic.co/?utm_source=dify-marketplace&utm_medium=integration&utm_campaign=agent-platforms) API key and one pay-as-you-go balance. Each tool's model list is loaded live from GenMagic, so newly released models appear without a plugin update.
 
 **GenMagic is a paid service.** The plugin is free, but every generation is billed to your GenMagic credit balance at the model's listed price. A new account gets a one-time $0.50 starter balance once its email address is verified.
 
@@ -23,6 +23,8 @@ This plugin is built and maintained by GenMagic.
 | Generate text | Plain text, prose, code, an SVG graphic or a complete HTML page, with any text model. | Text; SVG and HTML also as files; token usage and cost |
 
 Every tool has a **Model** dropdown listing that kind of model with its price. Leave it on **Auto** to let GenMagic choose.
+
+Video models include Veo, Kling, Seedance, Wan, Hailuo, Runway and Grok Imagine; image models include Nano Banana, GPT Image, FLUX, Seedream, Recraft and Qwen Image; music includes Lyria.
 
 ## Setup
 

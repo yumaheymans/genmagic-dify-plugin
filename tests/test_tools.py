@@ -94,7 +94,7 @@ class ProviderTest(unittest.TestCase):
     def test_a_rejected_key_explains_how_to_get_one(self):
         with self.assertRaises(ToolProviderCredentialValidationError) as ctx:
             self.validate(FakeResponse(401, {"error": {"code": "invalid_api_key", "message": "Invalid or revoked API key."}}))
-        self.assertIn("genmagic.co/developers", str(ctx.exception))
+        self.assertIn("genmagic.co/get-api-key", str(ctx.exception))
 
     def test_an_unverified_account_is_told_to_verify(self):
         with self.assertRaises(ToolProviderCredentialValidationError) as ctx:

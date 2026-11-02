@@ -8,8 +8,8 @@ identity:
     pt_BR: Gerar imagem
 description:
   human:
-    en_US: Create an image from a text description with any image model GenMagic serves (the list updates as labs release new models), optionally transforming a reference image or making a logo.
-    zh_Hans: 使用 GenMagic 提供的任一图像模型根据文字描述生成图像（模型列表随各实验室发布新模型实时更新），可选基于参考图变换或生成标志。
+    en_US: Create an image from a text description with any image model GenMagic serves (Nano Banana, GPT Image, FLUX, Seedream, Recraft, Qwen Image, Grok Imagine and more; the list updates as labs release new models), optionally transforming a reference image or making a logo.
+    zh_Hans: 使用 GenMagic 提供的任一图像模型（Nano Banana、GPT Image、FLUX、Seedream、Recraft、Qwen Image、Grok Imagine 等，模型列表随各实验室发布新模型实时更新）根据文字描述生成图像，可选基于参考图变换或生成标志。
     ja_JP: GenMagic が提供する任意の画像モデル（各ラボの新モデルに合わせて一覧が更新されます）でテキストから画像を生成します。参考画像の変換やロゴ作成も可能です。
     pt_BR: Crie uma imagem a partir de uma descrição com qualquer modelo de imagem do GenMagic (a lista acompanha os lançamentos), opcionalmente transformando uma imagem de referência ou criando um logotipo.
   llm: Generate an image from a text description and return it as an image file plus its hosted URL. Optionally pass a reference image to transform it (image-to-image), or set type to logo for a brand mark.

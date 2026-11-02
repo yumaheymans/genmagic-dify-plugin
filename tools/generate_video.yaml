@@ -8,8 +8,8 @@ identity:
     pt_BR: Gerar vídeo
 description:
   human:
-    en_US: Create a short video clip from a text description with any text-to-video model GenMagic serves. Waits up to about three minutes for the clip; a longer render returns a job id to finish with Check video.
-    zh_Hans: 使用 GenMagic 提供的任一视频模型根据文字描述生成短视频。最多等待约三分钟；渲染更久时返回任务 ID，可用“查询视频”获取结果。
+    en_US: Create a short video clip from a text description with any text-to-video model GenMagic serves (Veo, Kling, Seedance, Wan, Hailuo, Runway, Grok Imagine and more). Waits up to about three minutes for the clip; a longer render returns a job id to finish with Check video.
+    zh_Hans: 使用 GenMagic 提供的任一视频模型（Veo、Kling 可灵、Seedance、Wan 万相、Hailuo 海螺、Runway、Grok Imagine 等）根据文字描述生成短视频。最多等待约三分钟；渲染更久时返回任务 ID，可用“查询视频”获取结果。
     ja_JP: GenMagic が提供する任意の動画モデルでテキストから短い動画を生成します。最大約 3 分待機し、それ以上かかる場合はジョブ ID を返すので「動画を確認」で結果を取得します。
     pt_BR: Crie um clipe curto a partir de uma descrição com qualquer modelo de vídeo do GenMagic. Aguarda até cerca de três minutos; uma renderização mais longa retorna um ID para concluir com Verificar vídeo.
   llm: Generate a short video from a text description. Returns the video file and its hosted URL when it finishes within about three minutes; otherwise returns a job id and status, and the check_video tool returns the video once it is ready.

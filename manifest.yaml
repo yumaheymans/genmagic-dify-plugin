@@ -1,4 +1,4 @@
-version: 0.0.1
+version: 0.0.2
 type: plugin
 author: genmagic
 name: genmagic
@@ -8,11 +8,16 @@ label:
   ja_JP: GenMagic
   pt_BR: GenMagic
 description:
-  en_US: Generate images, video, music, speech and text with 500+ AI models from every major lab, using one GenMagic API key and one pay-as-you-go balance.
-  zh_Hans: 使用一个 GenMagic API 密钥和一个按量付费余额，调用各大实验室的 500 多个 AI 模型生成图像、视频、音乐、语音和文本。
-  ja_JP: GenMagic の API キーひとつと従量課金の残高ひとつで、主要ラボの 500 以上の AI モデルを使って画像、動画、音楽、音声、テキストを生成します。
-  pt_BR: Gere imagens, vídeo, música, voz e texto com mais de 500 modelos de IA dos principais laboratórios, usando uma chave de API GenMagic e um saldo pré-pago.
+  en_US: Generate images, video, music, speech and text with 450+ AI models (Veo, Kling, Seedance, Wan, Hailuo, Runway, Nano Banana, GPT Image, FLUX, Seedream, Recraft, Lyria and more), using one GenMagic API key and one pay-as-you-go balance.
+  zh_Hans: 使用一个 GenMagic API 密钥和一个按量付费余额，调用 450 多个 AI 模型（Veo、Kling 可灵、Seedance、Wan 万相、Hailuo 海螺、Runway、Nano Banana、GPT Image、FLUX、Seedream、Recraft、Lyria 等）生成图像、视频、音乐、语音和文本。
+  ja_JP: GenMagic の API キーひとつと従量課金の残高ひとつで、450 以上の AI モデル（Veo、Kling、Seedance、Wan、Hailuo、Runway、Nano Banana、GPT Image、FLUX、Seedream、Recraft、Lyria など）を使って画像、動画、音楽、音声、テキストを生成します。
+  pt_BR: Gere imagens, vídeo, música, voz e texto com mais de 450 modelos de IA (Veo, Kling, Seedance, Wan, Hailuo, Runway, Nano Banana, GPT Image, FLUX, Seedream, Recraft, Lyria e outros), usando uma chave de API GenMagic e um saldo pré-pago.
 icon: icon.svg
+tags:
+  - image
+  - videos
+  - design
+  - entertainment
 repo: https://github.com/yumaheymans/genmagic-dify-plugin
 contact: hello@genmagic.co
 resource:
@@ -26,7 +31,7 @@ network:
     - genmagic.co
     - tlwdqzfibvgektzgdfqa.supabase.co
 meta:
-  version: 0.0.1
+  version: 0.0.2
   arch:
     - amd64
     - arm64

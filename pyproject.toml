@@ -1,7 +1,7 @@
 [project]
 name = "genmagic"
-version = "0.0.1"
-description = "GenMagic tools for Dify: images, video, music, speech and text from 500+ AI models with one API key."
+version = "0.0.2"
+description = "GenMagic tools for Dify: images, video, music, speech and text from 450+ AI models with one API key."
 requires-python = ">=3.12"
 dependencies = [
     "dify_plugin==0.9.1",
