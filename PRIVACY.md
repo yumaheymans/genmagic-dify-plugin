@@ -5,7 +5,7 @@ The GenMagic plugin sends your requests to GenMagic (https://genmagic.co) so tha
 ## What is sent, and where
 
 - **To GenMagic:** your GenMagic API key (to authenticate), and the inputs of the tool you run: prompts, text to speak, system instructions, the chosen options and model, and any reference image you attach. Each request also names this plugin and its version (the `X-GenMagic-Client` header) so GenMagic can count usage that comes through Dify.
-- **To the model provider:** GenMagic passes your inputs to the provider of the model that runs the request (for example OpenAI, Google, Anthropic or Black Forest Labs, reached through a model gateway such as OpenRouter) to produce the result.
+- **To the model provider:** GenMagic passes your inputs to the AI model providers it works with to run the model you chose (for example OpenAI, Google, Anthropic or Black Forest Labs) and produce the result.
 - **Back to Dify:** the generated files and text, their hosted URLs, and the cost and remaining balance of the request.
 
 ## What GenMagic keeps
